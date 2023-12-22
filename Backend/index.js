@@ -25,11 +25,14 @@ const server = express();
 
 // middlewares
 // server.use(auth)
-server.use(cors());
+server.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 server.use(express.json());
 
 // db connection
-main().catch((err) => console.log(err));
 
 async function main() {
   // await mongoose.connect("mongodb://127.0.0.1:27017/BlogDB");
@@ -37,6 +40,7 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
   console.log("db connected");
 }
+main().catch((err) => console.log(err));
 
 server.get("/", (req, res) => {
   res.send("Welcome to Blog API");
@@ -72,3 +76,4 @@ server.delete("/users/:id", deleteUser);
 server.listen(process.env.PORT, () => {
   console.log("Server running at port ", process.env.PORT);
 });
+export default server;

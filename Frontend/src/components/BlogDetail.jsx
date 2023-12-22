@@ -9,8 +9,12 @@ const BlogDetail = () => {
   const { blogID } = useParams();
 
   const fetchBlog = async () => {
-    const res = await axios.get(API_URL + `${blogID}`);
-    setBlogDetails(res.data);
+    try {
+      const res = await axios.get(API_URL + `/${blogID}`);
+      setBlogDetails(res.data);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   };
   useEffect(() => {
     fetchBlog();

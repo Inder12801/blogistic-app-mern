@@ -26,7 +26,12 @@ const server = express();
 // middlewares
 // server.use(auth)
 server.use(express.json());
-server.use(cors());
+server.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 
 // db connection
 main().catch((err) => console.log(err));

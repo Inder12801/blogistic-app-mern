@@ -71,8 +71,8 @@ function App() {
     API_URL,
   };
   return (
-    <BlogContext.Provider value={{ ...value }}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <BlogContext.Provider value={{ ...value }}>
         <div className="app">
           <Navbar />
           <Routes>
@@ -82,8 +82,8 @@ function App() {
           </Routes>
           <Footer />
         </div>
-      </BrowserRouter>
-    </BlogContext.Provider>
+      </BlogContext.Provider>
+    </BrowserRouter>
   );
 }
 

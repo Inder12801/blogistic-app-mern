@@ -11,7 +11,7 @@ import SignUp from "./components/SignUp";
 
 function App() {
   console.log("App rendered");
-  const API_URL = "http://localhost:8080/blogs";
+  const API_URL = "https://blogistic-app-mern-api.vercel.app/blogs";
   const BLOGS_KEY = "blogs_key";
   console.log("Hero rendered");
   const [blogs, setBlogs] = useState([]);

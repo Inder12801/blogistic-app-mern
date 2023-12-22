@@ -43,7 +43,7 @@ async function main() {
   console.log("db connected");
 }
 
-server.get("/", () => {
+server.get("/", (req, res) => {
   res.send("Welcome to Blog API");
 });
 

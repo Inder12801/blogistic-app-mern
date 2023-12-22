@@ -43,6 +43,10 @@ async function main() {
   console.log("db connected");
 }
 
+server.get("/", () => {
+  res.send("Welcome to Blog API");
+});
+
 // blogs routes
 
 server.get("/blogs", getBlogs);
